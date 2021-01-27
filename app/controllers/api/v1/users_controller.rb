@@ -44,30 +44,30 @@ class Api::V1::UsersController < Api::V1::ApiController
 		end
 	end
 		
-		def deactivate_user
-			begin 
-				if params[:username].present?
-					user = User.find_by(username:params[:username])
-					user.is_active=false
-					user.save
-					render json: user, status: :ok		
-				end
-			rescue
-				render :json=> { status: false }
+	def deactivate_user
+		begin 
+			if params[:username].present?
+				user = User.find_by(username:params[:username])
+				user.is_active=false
+				user.save
+				render json: user, status: :ok		
 			end
+		rescue
+			render :json=> { status: false }
 		end
+	end
 
-		def delete_user
-			begin 
-				if params[:username].present?
-					user = User.find_by(username:params[:username])
-					user.destroy
-					render json: user, status: :ok		
-				end
-			rescue
-				render :json=> { status: false }
+	def delete_user
+		begin 
+			if params[:username].present?
+				user = User.find_by(username:params[:username])
+				user.destroy
+				render json: user, status: :ok		
 			end
+		rescue
+			render :json=> { status: false }
 		end
+	end
 
 	
 
