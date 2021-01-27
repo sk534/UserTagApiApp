@@ -12,16 +12,12 @@ gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'devise'
 gem 'rack-cors', :require => 'rack/cors'
-gem 'simple_token_authentication', '~> 1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'has_secure_token'
-gem 'warden'
-gem 'rails_warden', git: 'https://github.com/wardencommunity/rails_warden.git'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
