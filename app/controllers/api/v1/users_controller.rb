@@ -25,7 +25,7 @@ class Api::V1::UsersController < Api::V1::ApiController
 
 	def update		
 		begin 
-			if request.env["HTTP_USERNAME"].present?
+			if request.env["HTTP_USERNAME"].present?				
 				user = User.find_by(username:request.env["HTTP_USERNAME"])
 				if user.email==params[:email]
 					user.first_name=params[:first_name]
@@ -50,6 +50,10 @@ class Api::V1::UsersController < Api::V1::ApiController
 				user = User.find_by(username:params[:username])
 				user.is_active=false
 				user.save
+				user.tags.each do |tag|
+					tag.is_active=false
+					tag.save
+				end
 				render json: user, status: :ok		
 			end
 		rescue
