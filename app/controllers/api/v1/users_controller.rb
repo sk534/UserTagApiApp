@@ -73,8 +73,6 @@ class Api::V1::UsersController < Api::V1::ApiController
 		end
 	end
 
-	
-
 	private
 	def check_token
 		@token = request.env["HTTP_AUTHENTICATION_TOKEN"]
